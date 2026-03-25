@@ -1,93 +1,67 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 const bars = [
-  { label: 'Antes', value: 100, color: 'bg-outline-variant/40', textColor: 'text-on-surface-variant' },
-  { label: 'Mes 1',  value: 72,  color: 'bg-primary/30',        textColor: 'text-primary/70' },
-  { label: 'Mes 2',  value: 45,  color: 'bg-primary/50',        textColor: 'text-primary/80' },
-  { label: 'Mes 3',  value: 28,  color: 'bg-primary/70',        textColor: 'text-primary' },
-  { label: 'Mes 6',  value: 16,  color: 'bg-ochre',             textColor: 'text-ochre' },
+  { label: 'Tareas manuales', before: 85, after: 12, color: '#00391c' },
+  { label: 'Tiempo de respuesta', before: 72, after: 8, color: '#00522c' },
+  { label: 'Errores operativos', before: 64, after: 5, color: '#c88536' },
+  { label: 'Costo por proceso', before: 91, after: 18, color: '#00391c' },
 ];
-
-const MAX_HEIGHT = 260; // px
 
 export default function BarChartSection() {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-10% 0px' });
+  const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <div
-      ref={ref}
-      className="bg-white rounded-[2.5rem] p-10 shadow-xl shadow-primary/5 border border-outline-variant/20 w-full"
-    >
-      {/* Title */}
-      <p className="text-xs font-label text-on-surface-variant/60 uppercase tracking-[0.25em] mb-2">
-        Latencia Operacional
-      </p>
-      <p className="text-2xl font-extrabold font-headline text-on-surface mb-10">
-        Reducción en 6 meses
-      </p>
-
-      {/* Chart */}
-      <div className="flex items-end justify-between gap-3 h-[280px]">
-        {bars.map((bar, i) => {
-          const height = (bar.value / 100) * MAX_HEIGHT;
-          return (
-            <div key={bar.label} className="flex flex-col items-center gap-3 flex-1">
-              {/* Value label */}
-              <motion.span
-                className={`text-sm font-bold font-headline ${bar.textColor}`}
-                initial={{ opacity: 0 }}
-                animate={inView ? { opacity: 1 } : {}}
-                transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
-              >
-                {bar.value}%
-              </motion.span>
-
-              {/* Bar */}
-              <div
-                className="w-full rounded-t-2xl rounded-b-lg flex items-end justify-center overflow-hidden"
-                style={{ height: `${MAX_HEIGHT}px` }}
-              >
-                <motion.div
-                  className={`w-full ${bar.color} rounded-t-2xl rounded-b-lg`}
-                  initial={{ height: 0 }}
-                  animate={inView ? { height } : { height: 0 }}
-                  transition={{
-                    duration: 0.9,
-                    delay: 0.2 + i * 0.12,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                  style={{ height: 0 }}
-                />
-              </div>
-
-              {/* Label */}
-              <motion.span
-                className="text-xs font-label text-on-surface-variant/70 text-center"
-                initial={{ opacity: 0, y: 6 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.4, delay: 0.5 + i * 0.1 }}
-              >
-                {bar.label}
-              </motion.span>
-            </div>
-          );
-        })}
+    <div ref={ref} className="w-full rounded-3xl bg-white border border-secondary-container p-6 md:p-8 shadow-sm">
+      <div className="mb-6">
+        <p className="text-sm font-medium text-primary/60 uppercase tracking-widest mb-1">Impacto real</p>
+        <h3 className="text-xl font-bold text-primary">Antes vs. Después de FM AI</h3>
       </div>
 
-      {/* Legend */}
-      <div className="mt-8 pt-6 border-t border-outline-variant/20 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="w-3 h-3 rounded-full bg-ochre" />
-          <span className="text-xs font-label text-on-surface-variant">Con FM AI</span>
-        </div>
-        <div className="text-right">
-          <span className="text-2xl font-extrabold font-headline text-ochre">−84%</span>
-          <p className="text-xs text-on-surface-variant/60 font-label">reducción total</p>
-        </div>
+      <div className="space-y-5">
+        {bars.map((bar, i) => (
+          <div key={bar.label}>
+            <div className="flex justify-between items-center mb-1.5">
+              <span className="text-sm font-medium text-primary/80">{bar.label}</span>
+              <span className="text-xs text-primary/50">
+                <span className="line-through mr-1">{bar.before}%</span>
+                <span className="text-ochre font-semibold">{bar.after}%</span>
+              </span>
+            </div>
+            <div className="relative h-2.5 bg-secondary-container rounded-full overflow-hidden mb-1">
+              <motion.div
+                className="h-full rounded-full opacity-30"
+                style={{ backgroundColor: bar.color }}
+                initial={{ width: 0 }}
+                animate={inView ? { width: `${bar.before}%` } : { width: 0 }}
+                transition={{ duration: 0.8, delay: i * 0.12, ease: 'easeOut' }}
+              />
+            </div>
+            <div className="relative h-2.5 bg-secondary-container rounded-full overflow-hidden">
+              <motion.div
+                className="h-full rounded-full"
+                style={{ backgroundColor: bar.color }}
+                initial={{ width: 0 }}
+                animate={inView ? { width: `${bar.after}%` } : { width: 0 }}
+                transition={{ duration: 0.8, delay: i * 0.12 + 0.3, ease: 'easeOut' }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-6 flex items-center gap-4 text-xs text-primary/50">
+        <span className="flex items-center gap-1.5">
+          <span className="inline-block w-3 h-3 rounded-full bg-primary/30" />
+          Antes
+        </span>
+        <span className="flex items-center gap-1.5">
+          <span className="inline-block w-3 h-3 rounded-full bg-primary" />
+          Con FM AI
+        </span>
       </div>
     </div>
   );
