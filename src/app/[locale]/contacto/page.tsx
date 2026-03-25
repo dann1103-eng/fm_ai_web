@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import ContactForm from '@/components/contact/ContactForm';
 import { FadeUp, SlideIn, FadeIn, HeroReveal, HeroRevealItem } from '@/components/ui/motion';
 
@@ -29,8 +29,14 @@ function InfoRow({
   );
 }
 
-export default function ContactoPage() {
-  const t = useTranslations('contact');
+export default async function ContactoPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations('contact');
 
   return (
     <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24 pt-36">

@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import {
   FadeUp,
@@ -68,8 +68,14 @@ function ServiceVisual({
 /* ─────────────────────────────────────────
    Page
 ───────────────────────────────────────── */
-export default function ServiciosPage() {
-  const t = useTranslations('services');
+export default async function ServiciosPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations('services');
 
   return (
     <>

@@ -1,3 +1,4 @@
+import { setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 
 /* ─────────────────────────────────────────
@@ -28,7 +29,13 @@ function ThirdPartyCard({ icon, name, tag }: { icon: string; name: string; tag: 
 /* ─────────────────────────────────────────
    Page
 ───────────────────────────────────────── */
-export default function PrivacidadPage() {
+export default async function PrivacidadPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <main className="pt-32 pb-24 px-6 md:px-12">
       <div className="max-w-4xl mx-auto">

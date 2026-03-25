@@ -1,3 +1,4 @@
+import { setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 
 /* ─────────────────────────────────────────
@@ -14,7 +15,13 @@ function NumBadge({ n }: { n: string }) {
 /* ─────────────────────────────────────────
    Page
 ───────────────────────────────────────── */
-export default function TerminosPage() {
+export default async function TerminosPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <main className="pt-32 pb-24 px-6 md:px-12 max-w-5xl mx-auto">
 
@@ -53,6 +60,10 @@ export default function TerminosPage() {
               { href: '#uso',            label: '4. Uso Aceptable'         },
               { href: '#propiedad',      label: '5. Propiedad Intelectual' },
               { href: '#responsabilidad',label: '6. Responsabilidad'       },
+              { href: '#terceros',       label: '7. Terceros'              },
+              { href: '#modificaciones', label: '8. Modificaciones'        },
+              { href: '#terminacion',    label: '9. Terminación'           },
+              { href: '#ley',            label: '10. Ley Aplicable'        },
               { href: '#contacto',       label: '11. Contacto'             },
             ].map(({ href, label }) => (
               <a
@@ -208,12 +219,12 @@ export default function TerminosPage() {
           {/* 07 – 10 — Simple bordered list */}
           <section className="space-y-8">
             {[
-              { n: '7',  title: 'Enlaces a Terceros',         text: 'No controlamos ni asumimos responsabilidad por el contenido de sitios externos enlazados desde nuestra plataforma.' },
-              { n: '8',  title: 'Modificaciones a los Términos', text: 'FM AI se reserva el derecho de actualizar estos términos en cualquier momento. El uso continuado implica la aceptación de los nuevos cambios.' },
-              { n: '9',  title: 'Terminación del Servicio',   text: 'Podemos suspender o cancelar su acceso si detectamos un incumplimiento de las políticas aquí descritas.' },
-              { n: '10', title: 'Ley Aplicable y Jurisdicción', text: 'Cualquier disputa legal se regirá por las leyes locales de la jurisdicción de operación principal de FM AI.' },
-            ].map(({ n, title, text }) => (
-              <div key={n} className="border-t border-outline-variant/30 pt-8">
+              { n: '7',  id: 'terceros',      title: 'Enlaces a Terceros',         text: 'No controlamos ni asumimos responsabilidad por el contenido de sitios externos enlazados desde nuestra plataforma.' },
+              { n: '8',  id: 'modificaciones',title: 'Modificaciones a los Términos', text: 'FM AI se reserva el derecho de actualizar estos términos en cualquier momento. El uso continuado implica la aceptación de los nuevos cambios.' },
+              { n: '9',  id: 'terminacion',   title: 'Terminación del Servicio',   text: 'Podemos suspender o cancelar su acceso si detectamos un incumplimiento de las políticas aquí descritas.' },
+              { n: '10', id: 'ley',           title: 'Ley Aplicable y Jurisdicción', text: 'Cualquier disputa legal se regirá por las leyes locales de la jurisdicción de operación principal de FM AI.' },
+            ].map(({ n, id, title, text }) => (
+              <div key={n} id={id} className="border-t border-outline-variant/30 pt-8 scroll-mt-32">
                 <h4 className="font-bold text-primary mb-2 uppercase tracking-wide font-headline text-sm">
                   {n}. {title}
                 </h4>

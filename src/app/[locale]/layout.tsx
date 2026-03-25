@@ -1,6 +1,6 @@
 import { Manrope, Inter } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import Navbar from '@/components/layout/Navbar';
@@ -39,7 +39,10 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  const messages = await getMessages();
+  // Enable static rendering and propagate locale to all nested Server Components
+  setRequestLocale(locale);
+
+  const messages = await getMessages({ locale });
 
   return (
     <html lang={locale} className={`${manrope.variable} ${inter.variable}`}>
@@ -50,7 +53,7 @@ export default async function LocaleLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col bg-background text-on-surface selection:bg-primary-container/30 selection:text-on-surface">
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
           <main className="flex-1">
             <PageTransition>{children}</PageTransition>

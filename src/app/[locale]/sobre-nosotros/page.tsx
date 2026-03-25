@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import {
   FadeUp,
@@ -24,8 +24,14 @@ function TeamAvatar({ initials, icon }: { initials: string; icon: string }) {
   );
 }
 
-export default function SobreNosotrosPage() {
-  const t = useTranslations('about');
+export default async function SobreNosotrosPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations('about');
 
   const stats = [
     { value: t('stats.projects'), icon: 'folder_open', num: 50 },
