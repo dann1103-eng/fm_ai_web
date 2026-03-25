@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import ContactForm from '@/components/contact/ContactForm';
-import { FadeUp, SlideIn, FadeIn, HeroReveal, HeroRevealItem } from '@/components/ui/motion';
+import CalendlyEmbed from '@/components/contact/CalendlyEmbed';
+import { FadeUp, SlideIn, FadeIn } from '@/components/ui/motion';
 
 /* ─────────────────────────────────────────
    Info row (email / phone / location)
@@ -102,25 +103,9 @@ export default async function ContactoPage({
               </div>
             </FadeIn>
 
-            {/* Calendly placeholder */}
+            {/* Calendly embed */}
             <FadeUp delay={0.25}>
-              <div className="bg-surface-container-low border-2 border-dashed border-outline-variant/40 rounded-[2rem] h-[400px] flex flex-col items-center justify-center p-8 text-center group transition-all duration-500 hover:border-primary/40">
-                <div className="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-primary group-hover:scale-110 transition-transform duration-300">
-                  <span className="material-symbols-outlined text-3xl">calendar_month</span>
-                </div>
-                <p className="font-bold text-primary text-xl mb-2 font-headline">
-                  Agenda una llamada
-                </p>
-                <p className="text-on-surface-variant text-sm max-w-xs leading-relaxed font-body">
-                  Selecciona un espacio en nuestra agenda para una sesión de descubrimiento de 15 minutos.
-                </p>
-                {/* Pulsing skeleton — replace with actual Calendly embed */}
-                <div className="mt-8 w-full max-w-sm h-40 bg-surface-container rounded-2xl animate-pulse opacity-50" />
-
-                <p className="text-xs text-on-surface-variant/40 mt-4 font-label">
-                  Calendly embed va aquí
-                </p>
-              </div>
+              <CalendlyEmbed />
             </FadeUp>
 
           </aside>
