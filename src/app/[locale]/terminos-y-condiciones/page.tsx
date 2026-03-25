@@ -1,134 +1,259 @@
 import { Link } from '@/i18n/navigation';
 
-const sections = [
-  {
-    n: '01',
-    title: 'Aceptación de los Términos',
-    text: 'Al acceder y utilizar los servicios de FM AI, usted acepta quedar vinculado por estos Términos y Condiciones. Si no está de acuerdo con alguna parte de estos términos, no podrá acceder a nuestros servicios.',
-  },
-  {
-    n: '02',
-    title: 'Descripción del Servicio',
-    text: 'FM AI provee soluciones de inteligencia artificial, automatización de procesos, desarrollo web y consultoría tecnológica. Nos reservamos el derecho de modificar o discontinuar cualquier servicio sin previo aviso.',
-  },
-  {
-    n: '03',
-    title: 'Propiedad Intelectual',
-    text: 'Todo el contenido, código, diseño, logotipos y materiales presentes en la plataforma FM AI son propiedad exclusiva de FM AI y están protegidos por las leyes de propiedad intelectual aplicables. Queda prohibida su reproducción sin autorización expresa.',
-  },
-  {
-    n: '04',
-    title: 'Uso Aceptable',
-    text: 'Usted se compromete a utilizar nuestros servicios únicamente para fines legales y de acuerdo con estos términos. Queda prohibido el uso de nuestros servicios para actividades ilícitas, fraudulentas, o que vulneren derechos de terceros.',
-  },
-  {
-    n: '05',
-    title: 'Limitación de Responsabilidad',
-    text: 'FM AI no será responsable de daños indirectos, incidentales, especiales o consecuentes derivados del uso o la imposibilidad de uso de nuestros servicios. La responsabilidad total de FM AI no excederá el importe pagado por el cliente en los últimos 12 meses.',
-  },
-  {
-    n: '06',
-    title: 'Confidencialidad',
-    text: 'Toda información compartida durante la prestación de servicios será tratada con estricta confidencialidad. FM AI no divulgará información del cliente a terceros salvo requerimiento legal expreso.',
-  },
-  {
-    n: '07',
-    title: 'Pagos y Facturación',
-    text: 'Los precios de los servicios son los acordados en el contrato o propuesta comercial correspondiente. Los pagos son no reembolsables salvo acuerdo expreso. FM AI se reserva el derecho de suspender servicios ante falta de pago.',
-  },
-  {
-    n: '08',
-    title: 'Resolución de Disputas',
-    text: 'Cualquier disputa derivada de estos términos será resuelta mediante arbitraje bajo las normas de la cámara arbitral competente en la jurisdicción aplicable, antes de recurrir a instancias judiciales.',
-  },
-  {
-    n: '09',
-    title: 'Ley Aplicable',
-    text: 'Estos términos se rigen por las leyes vigentes en la República Argentina (o la jurisdicción del domicilio del cliente, según corresponda). Las partes se someten a la jurisdicción de los tribunales competentes.',
-  },
-  {
-    n: '10',
-    title: 'Modificaciones',
-    text: 'FM AI se reserva el derecho de modificar estos Términos y Condiciones en cualquier momento. Los cambios entrarán en vigor al publicarse en esta página. El uso continuado del servicio implica la aceptación de los términos modificados.',
-  },
-];
+/* ─────────────────────────────────────────
+   Section number badge
+───────────────────────────────────────── */
+function NumBadge({ n }: { n: string }) {
+  return (
+    <span className="w-10 h-10 shrink-0 flex items-center justify-center rounded-xl bg-surface-container-high text-primary font-bold text-sm font-headline">
+      {n}
+    </span>
+  );
+}
 
+/* ─────────────────────────────────────────
+   Page
+───────────────────────────────────────── */
 export default function TerminosPage() {
   return (
-    <main className="pt-32 pb-24 px-6 md:px-12">
-      <div className="max-w-4xl mx-auto">
+    <main className="pt-32 pb-24 px-6 md:px-12 max-w-5xl mx-auto">
 
-        {/* ── HEADER ── */}
-        <header className="mb-20">
-          <div className="flex items-center gap-4 mb-6">
-            <span className="bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase font-label">
-              Legal
-            </span>
-            <span className="text-outline text-sm font-body">Última actualización: Marzo 2026</span>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-extrabold text-secondary tracking-tighter leading-tight mb-8 font-headline">
-            Términos y{' '}
-            <span className="text-primary italic">Condiciones</span>
-          </h1>
-          <p className="text-xl text-on-surface-variant leading-relaxed max-w-2xl font-body">
-            Por favor, lea detenidamente estos términos antes de utilizar nuestros servicios.
-            Al acceder a FM AI, usted acepta quedar vinculado por las condiciones aquí descritas.
-          </p>
-        </header>
+      {/* ── HEADER ── */}
+      <header className="mb-20 text-center md:text-left">
+        <span className="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase mb-6 font-label">
+          Información Legal
+        </span>
+        <h1 className="text-5xl md:text-7xl font-extrabold text-primary tracking-tight leading-none mb-6 font-headline">
+          Términos &amp;{' '}
+          <span className="text-ochre italic">Condiciones</span>
+        </h1>
+        <p className="text-lg text-on-surface-variant max-w-2xl leading-relaxed font-body">
+          Este documento rige la relación entre usted y FM AI. Por favor, lea detenidamente estas
+          disposiciones antes de utilizar nuestros servicios de automatización e IA.
+        </p>
+        <div className="mt-8 flex items-center gap-3 text-sm font-semibold text-primary font-label">
+          <span className="material-symbols-outlined text-base">calendar_today</span>
+          Última actualización: Marzo 2026
+        </div>
+      </header>
 
-        {/* ── SECTIONS ── */}
-        <div className="space-y-0">
-          {sections.map(({ n, title, text }, i) => (
-            <div
-              key={n}
-              className={`group flex items-start gap-6 py-10 ${
-                i < sections.length - 1 ? 'border-b border-outline-variant/20' : ''
-              }`}
-            >
-              <span className="text-3xl font-black text-primary/20 group-hover:text-primary/70 transition-colors duration-300 shrink-0 font-headline leading-tight w-10">
-                {n}
-              </span>
-              <div>
-                <h2 className="text-xl font-bold text-secondary mb-3 font-headline">{title}</h2>
-                <p className="text-on-surface-variant leading-relaxed font-body text-sm">{text}</p>
+      {/* ── CONTENT GRID ── */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+
+        {/* ── SIDEBAR TOC (sticky, desktop only) ── */}
+        <aside className="hidden lg:block lg:col-span-3 sticky top-32 h-fit">
+          <nav className="space-y-4">
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-outline mb-6 font-label">
+              Navegación
+            </p>
+            {[
+              { href: '#aceptacion',     label: '1. Aceptación'           },
+              { href: '#descripcion',    label: '2. Descripción'           },
+              { href: '#registro',       label: '3. Registro'              },
+              { href: '#uso',            label: '4. Uso Aceptable'         },
+              { href: '#propiedad',      label: '5. Propiedad Intelectual' },
+              { href: '#responsabilidad',label: '6. Responsabilidad'       },
+              { href: '#contacto',       label: '11. Contacto'             },
+            ].map(({ href, label }) => (
+              <a
+                key={href}
+                href={href}
+                className="block text-sm font-medium text-on-surface-variant hover:text-primary transition-colors duration-200 font-body"
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
+        </aside>
+
+        {/* ── MAIN LEGAL TEXT ── */}
+        <div className="lg:col-span-9 space-y-16">
+
+          {/* 01 — Aceptación */}
+          <section className="scroll-mt-32" id="aceptacion">
+            <div className="flex items-center gap-4 mb-6">
+              <NumBadge n="01" />
+              <h2 className="text-2xl font-extrabold text-primary tracking-tight uppercase font-headline">
+                Aceptación de los Términos
+              </h2>
+            </div>
+            <div className="bg-surface-container-low p-8 rounded-[1.5rem] border-l-4 border-primary shadow-[0_40px_60px_-15px_rgba(26,28,26,0.05)]">
+              <p className="leading-relaxed text-on-surface-variant font-body">
+                Al acceder y utilizar el sitio web de{' '}
+                <strong className="text-primary font-extrabold">FM AI</strong> y cualquier
+                subdominio o servicio relacionado, usted reconoce que ha leído, comprendido y
+                aceptado estar sujeto a estos Términos y Condiciones en su totalidad. Si no está de
+                acuerdo con alguna parte de estos términos, debe cesar inmediatamente el uso de
+                nuestra plataforma.
+              </p>
+            </div>
+          </section>
+
+          {/* 02 — Descripción */}
+          <section className="scroll-mt-32" id="descripcion">
+            <div className="flex items-center gap-4 mb-6">
+              <NumBadge n="02" />
+              <h2 className="text-2xl font-extrabold text-primary tracking-tight uppercase font-headline">
+                Descripción del Servicio
+              </h2>
+            </div>
+            <div className="space-y-6">
+              <p className="leading-relaxed text-on-surface-variant font-body">
+                FM AI ofrece soluciones tecnológicas avanzadas diseñadas para la optimización
+                empresarial, que incluyen pero no se limitan a:
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  { icon: 'settings_input_component', title: 'Automatización de Procesos', desc: 'Implementación de flujos de trabajo autónomos mediante IA.' },
+                  { icon: 'language',                 title: 'Desarrollo Web',              desc: 'Sitios optimizados para rendimiento y conversión.' },
+                  { icon: 'smart_toy',                title: 'Chatbots Inteligentes',       desc: 'Sistemas de conversación basados en LLM personalizados.' },
+                  { icon: 'query_stats',              title: 'Consultoría Estratégica',      desc: 'Asesoramiento técnico para la integración de IA.' },
+                ].map(({ icon, title, desc }) => (
+                  <div
+                    key={title}
+                    className="p-6 bg-white rounded-[1.25rem] border border-outline-variant/20 flex items-start gap-4 shadow-sm"
+                  >
+                    <span className="material-symbols-outlined text-ochre text-2xl shrink-0 mt-0.5">{icon}</span>
+                    <div>
+                      <h4 className="font-bold text-primary mb-1 font-headline text-sm">{title}</h4>
+                      <p className="text-sm text-on-surface-variant/80 font-body">{desc}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
-        </div>
+          </section>
 
-        {/* ── ACCEPTANCE BANNER ── */}
-        <div className="mt-20 bg-surface-container-low rounded-[2rem] p-10 flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
-          <div className="w-14 h-14 bg-secondary-container rounded-full flex items-center justify-center shrink-0">
-            <span className="material-symbols-outlined text-secondary text-2xl">verified</span>
+          {/* 03 + 04 — 2-col */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <section className="p-8 bg-surface-container rounded-[1.5rem] scroll-mt-32" id="registro">
+              <h3 className="text-xl font-bold text-primary mb-4 flex items-center gap-2 font-headline">
+                <span className="material-symbols-outlined text-primary text-xl">account_circle</span>
+                3. Registro y Cuenta
+              </h3>
+              <p className="text-sm leading-relaxed text-on-surface-variant font-body">
+                El usuario es el único responsable de mantener la confidencialidad de sus
+                credenciales de acceso. Cualquier actividad realizada bajo su cuenta será su
+                responsabilidad directa ante FM AI.
+              </p>
+            </section>
+
+            <section className="p-8 bg-surface-container rounded-[1.5rem] scroll-mt-32" id="uso">
+              <h3 className="text-xl font-bold text-primary mb-4 flex items-center gap-2 font-headline">
+                <span className="material-symbols-outlined text-primary text-xl">gavel</span>
+                4. Uso Aceptable
+              </h3>
+              <p className="text-sm leading-relaxed text-on-surface-variant font-body">
+                Queda estrictamente prohibido el uso del sitio para fines ilícitos, ingeniería
+                inversa de nuestras herramientas de IA, o cualquier acción que comprometa la
+                integridad técnica de FM AI.
+              </p>
+            </section>
           </div>
-          <div>
-            <h3 className="font-bold text-primary font-headline mb-1">
-              ¿Preguntas sobre estos términos?
-            </h3>
-            <p className="text-on-surface-variant text-sm font-body">
-              Contáctenos en{' '}
+
+          {/* 05 — Propiedad Intelectual */}
+          <section className="scroll-mt-32" id="propiedad">
+            <div className="flex items-center gap-4 mb-6">
+              <NumBadge n="05" />
+              <h2 className="text-2xl font-extrabold text-primary tracking-tight uppercase font-headline">
+                Propiedad Intelectual
+              </h2>
+            </div>
+            <div className="relative overflow-hidden p-8 bg-primary text-on-primary rounded-[1.5rem]">
+              <div className="absolute top-0 right-0 opacity-10 pointer-events-none select-none">
+                <span
+                  className="material-symbols-outlined"
+                  style={{ fontSize: '12rem', fontVariationSettings: "'FILL' 1" }}
+                >
+                  copyright
+                </span>
+              </div>
+              <p className="relative z-10 leading-relaxed opacity-90 font-body">
+                Todo el contenido, incluyendo algoritmos, interfaces de usuario, diseños visuales,
+                logotipos y código fuente, es propiedad exclusiva de{' '}
+                <strong className="text-ochre">FM AI</strong>. Se prohíbe la reproducción total o
+                parcial sin consentimiento previo y por escrito.
+              </p>
+            </div>
+          </section>
+
+          {/* 06 — Limitación de Responsabilidad */}
+          <section className="scroll-mt-32" id="responsabilidad">
+            <div className="flex items-center gap-4 mb-6">
+              <NumBadge n="06" />
+              <h2 className="text-2xl font-extrabold text-primary tracking-tight uppercase font-headline">
+                Limitación de Responsabilidad
+              </h2>
+            </div>
+            <div className="space-y-4">
+              <p className="leading-relaxed text-on-surface-variant font-body">
+                FM AI proporciona tecnología de IA de vanguardia &ldquo;tal cual&rdquo;. No nos
+                hacemos responsables por:
+              </p>
+              <ul className="space-y-4 ml-4">
+                {[
+                  'Daños indirectos, incidentales o consecuentes.',
+                  'Errores derivados de datos de entrada proporcionados por el usuario.',
+                  'Interrupciones del servicio por mantenimiento técnico.',
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-on-surface-variant font-body">
+                    <span className="w-2 h-2 rounded-full bg-ochre shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          {/* 07 – 10 — Simple bordered list */}
+          <section className="space-y-8">
+            {[
+              { n: '7',  title: 'Enlaces a Terceros',         text: 'No controlamos ni asumimos responsabilidad por el contenido de sitios externos enlazados desde nuestra plataforma.' },
+              { n: '8',  title: 'Modificaciones a los Términos', text: 'FM AI se reserva el derecho de actualizar estos términos en cualquier momento. El uso continuado implica la aceptación de los nuevos cambios.' },
+              { n: '9',  title: 'Terminación del Servicio',   text: 'Podemos suspender o cancelar su acceso si detectamos un incumplimiento de las políticas aquí descritas.' },
+              { n: '10', title: 'Ley Aplicable y Jurisdicción', text: 'Cualquier disputa legal se regirá por las leyes locales de la jurisdicción de operación principal de FM AI.' },
+            ].map(({ n, title, text }) => (
+              <div key={n} className="border-t border-outline-variant/30 pt-8">
+                <h4 className="font-bold text-primary mb-2 uppercase tracking-wide font-headline text-sm">
+                  {n}. {title}
+                </h4>
+                <p className="text-on-surface-variant font-body text-sm leading-relaxed">{text}</p>
+              </div>
+            ))}
+          </section>
+
+          {/* 11 — Contacto */}
+          <section className="scroll-mt-32 pt-4" id="contacto">
+            <div className="bg-ochre/10 p-12 rounded-[2rem] text-center">
+              <h2 className="text-3xl font-extrabold text-primary mb-4 font-headline">
+                ¿Tiene dudas legales?
+              </h2>
+              <p className="text-on-surface-variant mb-8 font-body">
+                Nuestro equipo jurídico está disponible para resolver cualquier consulta sobre estos
+                términos.
+              </p>
               <a
                 href="mailto:legal@fmai.com"
-                className="text-primary font-semibold hover:text-ochre transition-colors underline underline-offset-2"
+                className="inline-flex items-center gap-2 text-xl font-bold text-primary hover:text-ochre hover:underline underline-offset-8 transition-all font-headline"
               >
                 legal@fmai.com
-              </a>{' '}
-              y nuestro equipo legal le responderá en menos de 48 horas.
-            </p>
+                <span className="material-symbols-outlined text-xl">alternate_email</span>
+              </a>
+            </div>
+          </section>
+
+          {/* Back */}
+          <div className="text-center pt-4">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 text-sm text-on-surface-variant hover:text-primary transition-colors font-label"
+            >
+              <span className="material-symbols-outlined text-base">arrow_back</span>
+              Volver al inicio
+            </Link>
           </div>
-        </div>
 
-        {/* ── BACK ── */}
-        <div className="text-center mt-12">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-sm text-on-surface-variant hover:text-primary transition-colors font-label"
-          >
-            <span className="material-symbols-outlined text-base">arrow_back</span>
-            Volver al inicio
-          </Link>
         </div>
-
       </div>
     </main>
   );
