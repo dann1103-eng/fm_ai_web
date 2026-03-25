@@ -1,0 +1,194 @@
+{
+  "metadata": {
+    "title": "FM AI - Artificial Intelligence for Your Business",
+    "description": "Automate, scale and innovate with personalized AI solutions. Process automation, chatbots, web development and AI consulting."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About Us",
+    "contact": "Contact",
+    "cta": "Book a call"
+  },
+  "hero": {
+    "title": "Artificial Intelligence for Your Business",
+    "subtitle": "Automate, scale and innovate with personalized AI solutions",
+    "cta": "Book a call",
+    "ctaSecondary": "View services"
+  },
+  "services": {
+    "title": "Transform your business with AI",
+    "subtitle": "Solutions designed by business outcome",
+    "pageTitle": "Our Services",
+    "pageSubtitle": "AI solutions designed by business outcome",
+    "saveTime": {
+      "title": "Save Time",
+      "tagline": "Automate repetitive tasks with intelligent workflows",
+      "description": "We design and implement AI-powered automation workflows that eliminate manual tasks. We connect your existing tools so they work together intelligently.",
+      "features": [
+        "Automated workflows with n8n, Make and APIs",
+        "Integration with CRM, email, WhatsApp, social media",
+        "Automatic document processing with AI",
+        "Smart alerts and reports"
+      ],
+      "cta": "I want to automate"
+    },
+    "sellMore": {
+      "title": "Sell More",
+      "tagline": "Chatbots that convert and websites that attract clients",
+      "description": "We create intelligent chatbots and optimized websites to convert visitors into customers. 24/7 attention that never sleeps.",
+      "features": [
+        "AI chatbots for WhatsApp, web and Instagram",
+        "Conversion-optimized landing pages",
+        "24/7 automated customer service",
+        "Automatic lead follow-up"
+      ],
+      "cta": "I want to sell more"
+    },
+    "scale": {
+      "title": "Scale Your Business",
+      "tagline": "Integrations and systems that grow with you",
+      "description": "We build robust integrations between your systems so your business can grow without technical friction.",
+      "features": [
+        "Custom APIs and microservices",
+        "Cross-platform integration (ERP, CRM, e-commerce)",
+        "AI-powered dashboards and analytics",
+        "Scalable cloud architecture"
+      ],
+      "cta": "I want to scale"
+    },
+    "innovate": {
+      "title": "Innovate with AI",
+      "tagline": "Consulting to adopt AI in your company",
+      "description": "We guide you through the AI adoption process with strategic consulting, team training and proof of concepts.",
+      "features": [
+        "Automatable process audit",
+        "AI implementation roadmap",
+        "Team training on AI tools",
+        "Proof of concepts and pilots"
+      ],
+      "cta": "I want to innovate"
+    },
+    "ctaSection": {
+      "title": "Don't know where to start?",
+      "subtitle": "We help you find the perfect solution.",
+      "cta": "Book a free consultation"
+    }
+  },
+  "testimonials": {
+    "title": "What our clients say",
+    "items": [
+      {
+        "quote": "FM AI completely transformed our processes. We save over 20 hours per week on repetitive tasks.",
+        "name": "Carlos Méndez",
+        "company": "TechCorp Latam",
+        "role": "CEO"
+      },
+      {
+        "quote": "The chatbot they implemented increased our conversions by 40%. Incredible work.",
+        "name": "María González",
+        "company": "E-Shop Pro",
+        "role": "Marketing Director"
+      },
+      {
+        "quote": "The AI consulting helped us identify opportunities we didn't know existed. Totally recommended.",
+        "name": "Andrés Ruiz",
+        "company": "Innova Solutions",
+        "role": "CTO"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to transform your business?",
+    "subtitle": "Book a free call and discover how AI can help you",
+    "button": "Contact us now"
+  },
+  "about": {
+    "title": "About FM AI",
+    "subtitle": "We transform businesses with artificial intelligence",
+    "mission": "Our Mission",
+    "missionText": "Democratize access to artificial intelligence for businesses of all sizes in Latin America.",
+    "stats": {
+      "projects": "50+ Projects",
+      "clients": "20+ Clients",
+      "countries": "3 Countries"
+    },
+    "values": {
+      "title": "Our Values",
+      "innovation": {
+        "title": "Innovation",
+        "description": "Always exploring the latest AI technologies"
+      },
+      "results": {
+        "title": "Results",
+        "description": "We focus on measurable impact for your business"
+      },
+      "closeness": {
+        "title": "Closeness",
+        "description": "We accompany you every step of the way"
+      }
+    },
+    "team": {
+      "title": "Our Team",
+      "members": [
+        {
+          "name": "Team Member",
+          "role": "CEO & Founder",
+          "description": "AI and automation expert"
+        },
+        {
+          "name": "Team Member",
+          "role": "CTO",
+          "description": "Web development and integrations specialist"
+        },
+        {
+          "name": "Team Member",
+          "role": "Lead Developer",
+          "description": "Full-stack developer with AI experience"
+        }
+      ]
+    },
+    "ctaTitle": "Want to be part of the AI revolution?",
+    "ctaButton": "Work with us"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's talk about your project",
+    "formSubtitle": "Fill out the form and we'll get back to you within 24 hours",
+    "name": "Full name",
+    "email": "Email",
+    "phone": "Phone",
+    "service": "How can we help you?",
+    "serviceOptions": {
+      "automation": "Automation",
+      "chatbot": "Chatbot",
+      "webdev": "Web Development",
+      "consulting": "AI Consulting",
+      "other": "Other"
+    },
+    "message": "Message",
+    "send": "Send message",
+    "success": "Message sent! We'll contact you soon.",
+    "error": "There was an error. Please try again.",
+    "calendly": "Or book a call directly",
+    "info": {
+      "email": "contact@fmai.com",
+      "phone": "+XX XXX XXX XXXX",
+      "location": "Latin America (remote)"
+    }
+  },
+  "chatbot": {
+    "title": "Chat with FM AI",
+    "placeholder": "Type your message...",
+    "greeting": "Hi! I'm FM AI's assistant. How can I help you?"
+  },
+  "footer": {
+    "description": "Artificial intelligence solutions to power your business.",
+    "links": "Links",
+    "servicesTitle": "Services",
+    "legal": "Legal",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "rights": "All rights reserved."
+  }
+}

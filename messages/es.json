@@ -1,0 +1,194 @@
+{
+  "metadata": {
+    "title": "FM AI - Inteligencia Artificial para tu Negocio",
+    "description": "Automatiza, escala e innova con soluciones de IA personalizadas. Automatización de procesos, chatbots, desarrollo web y consultoría en IA."
+  },
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "about": "Sobre Nosotros",
+    "contact": "Contacto",
+    "cta": "Agenda una llamada"
+  },
+  "hero": {
+    "title": "Inteligencia Artificial para tu Negocio",
+    "subtitle": "Automatiza, escala e innova con soluciones de IA personalizadas",
+    "cta": "Agenda una llamada",
+    "ctaSecondary": "Ver servicios"
+  },
+  "services": {
+    "title": "Transforma tu negocio con IA",
+    "subtitle": "Soluciones diseñadas por resultado de negocio",
+    "pageTitle": "Nuestros Servicios",
+    "pageSubtitle": "Soluciones de IA diseñadas por resultado de negocio",
+    "saveTime": {
+      "title": "Ahorra Tiempo",
+      "tagline": "Automatiza tareas repetitivas con flujos inteligentes",
+      "description": "Diseñamos e implementamos flujos de automatización con IA que eliminan tareas manuales. Conectamos tus herramientas existentes para que trabajen juntas de forma inteligente.",
+      "features": [
+        "Flujos automatizados con n8n, Make y APIs",
+        "Integración con CRM, email, WhatsApp, redes sociales",
+        "Procesamiento automático de documentos con IA",
+        "Alertas y reportes inteligentes"
+      ],
+      "cta": "Quiero automatizar"
+    },
+    "sellMore": {
+      "title": "Vende Más",
+      "tagline": "Chatbots que convierten y webs que atraen clientes",
+      "description": "Creamos chatbots inteligentes y sitios web optimizados para convertir visitantes en clientes. Atención 24/7 que no duerme.",
+      "features": [
+        "Chatbots con IA para WhatsApp, web e Instagram",
+        "Landing pages optimizadas para conversión",
+        "Atención al cliente automatizada 24/7",
+        "Seguimiento automático de leads"
+      ],
+      "cta": "Quiero vender más"
+    },
+    "scale": {
+      "title": "Escala tu Negocio",
+      "tagline": "Integraciones y sistemas que crecen contigo",
+      "description": "Construimos integraciones robustas entre tus sistemas para que tu negocio pueda crecer sin fricciones técnicas.",
+      "features": [
+        "APIs personalizadas y microservicios",
+        "Integración entre plataformas (ERP, CRM, e-commerce)",
+        "Dashboards y analytics con IA",
+        "Arquitectura escalable en la nube"
+      ],
+      "cta": "Quiero escalar"
+    },
+    "innovate": {
+      "title": "Innova con IA",
+      "tagline": "Consultoría para adoptar IA en tu empresa",
+      "description": "Te acompañamos en el proceso de adopción de IA con consultoría estratégica, formación de equipos y pruebas de concepto.",
+      "features": [
+        "Auditoría de procesos automatizables",
+        "Roadmap de implementación de IA",
+        "Capacitación de equipos en herramientas IA",
+        "Pruebas de concepto y pilotos"
+      ],
+      "cta": "Quiero innovar"
+    },
+    "ctaSection": {
+      "title": "¿No sabes por dónde empezar?",
+      "subtitle": "Te ayudamos a encontrar la solución perfecta.",
+      "cta": "Agenda una consulta gratuita"
+    }
+  },
+  "testimonials": {
+    "title": "Lo que dicen nuestros clientes",
+    "items": [
+      {
+        "quote": "FM AI transformó completamente nuestros procesos. Ahorramos más de 20 horas semanales en tareas repetitivas.",
+        "name": "Carlos Méndez",
+        "company": "TechCorp Latam",
+        "role": "CEO"
+      },
+      {
+        "quote": "El chatbot que nos implementaron aumentó nuestras conversiones en un 40%. Increíble trabajo.",
+        "name": "María González",
+        "company": "E-Shop Pro",
+        "role": "Directora de Marketing"
+      },
+      {
+        "quote": "La consultoría de IA nos ayudó a identificar oportunidades que no sabíamos que existían. Totalmente recomendados.",
+        "name": "Andrés Ruiz",
+        "company": "Innova Solutions",
+        "role": "CTO"
+      }
+    ]
+  },
+  "cta": {
+    "title": "¿Listo para transformar tu negocio?",
+    "subtitle": "Agenda una llamada gratuita y descubre cómo la IA puede ayudarte",
+    "button": "Contactar ahora"
+  },
+  "about": {
+    "title": "Sobre FM AI",
+    "subtitle": "Transformamos negocios con inteligencia artificial",
+    "mission": "Nuestra Misión",
+    "missionText": "Democratizar el acceso a la inteligencia artificial para empresas de todos los tamaños en Latinoamérica.",
+    "stats": {
+      "projects": "50+ Proyectos",
+      "clients": "20+ Clientes",
+      "countries": "3 Países"
+    },
+    "values": {
+      "title": "Nuestros Valores",
+      "innovation": {
+        "title": "Innovación",
+        "description": "Siempre explorando las últimas tecnologías de IA"
+      },
+      "results": {
+        "title": "Resultados",
+        "description": "Nos enfocamos en el impacto medible en tu negocio"
+      },
+      "closeness": {
+        "title": "Cercanía",
+        "description": "Te acompañamos en cada paso del proceso"
+      }
+    },
+    "team": {
+      "title": "Nuestro Equipo",
+      "members": [
+        {
+          "name": "Nombre del Miembro",
+          "role": "CEO & Fundador",
+          "description": "Experto en IA y automatización"
+        },
+        {
+          "name": "Nombre del Miembro",
+          "role": "CTO",
+          "description": "Especialista en desarrollo web e integraciones"
+        },
+        {
+          "name": "Nombre del Miembro",
+          "role": "Lead Developer",
+          "description": "Desarrollador full-stack con experiencia en IA"
+        }
+      ]
+    },
+    "ctaTitle": "¿Quieres ser parte de la revolución IA?",
+    "ctaButton": "Trabaja con nosotros"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Hablemos sobre tu proyecto",
+    "formSubtitle": "Completa el formulario y te contactaremos en menos de 24 horas",
+    "name": "Nombre completo",
+    "email": "Email",
+    "phone": "Teléfono",
+    "service": "¿Cómo podemos ayudarte?",
+    "serviceOptions": {
+      "automation": "Automatización",
+      "chatbot": "Chatbot",
+      "webdev": "Desarrollo Web",
+      "consulting": "Consultoría IA",
+      "other": "Otro"
+    },
+    "message": "Mensaje",
+    "send": "Enviar mensaje",
+    "success": "¡Mensaje enviado! Te contactaremos pronto.",
+    "error": "Hubo un error. Intenta de nuevo.",
+    "calendly": "O agenda directamente una llamada",
+    "info": {
+      "email": "contacto@fmai.com",
+      "phone": "+XX XXX XXX XXXX",
+      "location": "Latinoamérica (remoto)"
+    }
+  },
+  "chatbot": {
+    "title": "Chat con FM AI",
+    "placeholder": "Escribe tu mensaje...",
+    "greeting": "¡Hola! Soy el asistente de FM AI. ¿En qué puedo ayudarte?"
+  },
+  "footer": {
+    "description": "Soluciones de inteligencia artificial para impulsar tu negocio.",
+    "links": "Enlaces",
+    "servicesTitle": "Servicios",
+    "legal": "Legal",
+    "terms": "Términos y Condiciones",
+    "privacy": "Política de Privacidad",
+    "rights": "Todos los derechos reservados."
+  }
+}
