@@ -34,8 +34,15 @@ function ContactFormInner() {
     e.preventDefault();
     setStatus('loading');
     try {
-      // Replace with your actual form endpoint / email service
-      await new Promise((r) => setTimeout(r, 1200)); // Simulated delay
+      const res = await fetch(
+        'https://n8n-n8n.5hoafb.easypanel.host/webhook-test/formulario_fmai_web',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(form),
+        },
+      );
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
       setStatus('success');
       setForm({ name: '', email: '', phone: '', service: 'automatizacion', message: '' });
     } catch {
