@@ -98,6 +98,27 @@
       }
     ]
   },
+  "home": {
+    "tagline": "Tactical Intelligence",
+    "heroTitle": "The Future of AI,",
+    "heroCon": "with",
+    "heroTitleHighlight": "Organic Sophistication.",
+    "heroSubtitleExtra": "Cutting-edge technology with a handcrafted touch, designed to grow your business.",
+    "heroCta": "Explore Solutions",
+    "aiActive": "AI Active",
+    "capabilities": "Our Capabilities",
+    "bentoExtra1": "We eliminate operational friction through autonomous agents.",
+    "bentoExtra2": "Assistants that understand emotional and technical context.",
+    "bentoFeatures": ["Multilingual NLP", "Total CRM Integration", "Available 24/7"],
+    "caseLabel": "Success Story: LogisticCorp",
+    "caseMetric": "reduction in operational latency.",
+    "caseStat1": "Costs Saved",
+    "caseStat2": "Response Time",
+    "caseCta": "Request free audit",
+    "techLabel": "Powered by World-Class Technology",
+    "ctaPrimary": "Request Free Audit",
+    "ctaSecondary": "Talk to a consultant"
+  },
   "cta": {
     "title": "Ready to transform your business?",
     "subtitle": "Book a free call and discover how AI can help you",

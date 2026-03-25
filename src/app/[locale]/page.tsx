@@ -36,24 +36,24 @@ export default async function HomePage({
           <HeroReveal className="space-y-8">
             <HeroRevealItem>
               <span className="text-ochre font-label font-bold tracking-[0.2em] uppercase text-xs">
-                Inteligencia Táctil
+                {t('home.tagline')}
               </span>
             </HeroRevealItem>
 
             <HeroRevealItem>
               <h1 className="text-6xl md:text-7xl font-extrabold tracking-tighter leading-[1.05] text-on-surface font-headline">
-                El Futuro de la IA,{' '}
+                {t('home.heroTitle')}{' '}
                 <br />
-                con{' '}
+                {t('home.heroCon')}{' '}
                 <span className="text-ochre italic">
-                  Sofisticación Orgánica.
+                  {t('home.heroTitleHighlight')}
                 </span>
               </h1>
             </HeroRevealItem>
 
             <HeroRevealItem>
               <p className="text-xl text-on-surface-variant leading-relaxed max-w-lg font-body">
-                {t('hero.subtitle')}. Tecnología de vanguardia con un toque artesanal, diseñada para hacer crecer tu negocio.
+                {t('hero.subtitle')}. {t('home.heroSubtitleExtra')}
               </p>
             </HeroRevealItem>
 
@@ -63,7 +63,7 @@ export default async function HomePage({
                   href="/servicios"
                   className="bg-primary text-on-primary px-10 py-5 rounded-full text-lg font-bold font-headline shadow-xl shadow-primary/10 hover:bg-ochre transition-all duration-300 cursor-pointer"
                 >
-                  Explorar Soluciones
+                  {t('home.heroCta')}
                 </Link>
                 <Link
                   href="/contacto"
@@ -100,7 +100,7 @@ export default async function HomePage({
                   <div className="h-2 w-3/4 bg-surface-container rounded-full" />
                 </div>
                 <div className="flex gap-3 self-end">
-                  <div className="px-4 py-2 bg-primary text-on-primary rounded-full text-xs font-bold font-label">IA Activa</div>
+                  <div className="px-4 py-2 bg-primary text-on-primary rounded-full text-xs font-bold font-label">{t('home.aiActive')}</div>
                   <div className="px-4 py-2 bg-white/70 text-primary rounded-full text-xs font-bold font-label border border-primary/20">n8n Flow</div>
                 </div>
               </div>
@@ -118,7 +118,7 @@ export default async function HomePage({
 
           <FadeUp className="mb-16">
             <span className="text-ochre font-label font-bold tracking-widest uppercase text-xs">
-              Nuestras Capacidades
+              {t('home.capabilities')}
             </span>
             <h2 className="text-5xl font-extrabold tracking-tight mt-4 text-primary font-headline">
               {t('services.title')}
@@ -138,7 +138,7 @@ export default async function HomePage({
                 <div>
                   <h3 className="text-3xl font-bold mb-4 text-primary font-headline">{t('services.saveTime.title')}</h3>
                   <p className="text-on-surface-variant text-lg leading-relaxed max-w-md font-body">
-                    {t('services.saveTime.tagline')}. Eliminamos la fricción operativa mediante agentes autónomos.
+                    {t('services.saveTime.tagline')}. {t('home.bentoExtra1')}
                   </p>
                 </div>
               </ScaleOnHover>
@@ -152,11 +152,11 @@ export default async function HomePage({
                 <div className="space-y-6">
                   <h3 className="text-3xl font-bold font-headline">{t('services.sellMore.title')}</h3>
                   <p className="opacity-90 text-lg font-body leading-relaxed">
-                    {t('services.sellMore.tagline')}. Asistentes que comprenden el contexto emocional y técnico.
+                    {t('services.sellMore.tagline')}. {t('home.bentoExtra2')}
                   </p>
                   <div className="pt-8 border-t border-white/20">
                     <ul className="space-y-3 font-body">
-                      {['NLP Multilingüe', 'Integración CRM Total', 'Disponible 24/7'].map((item) => (
+                      {(t.raw('home.bentoFeatures') as string[]).map((item) => (
                         <li key={item} className="flex items-center gap-2 text-sm">
                           <span className="material-symbols-outlined text-sm text-ochre">check_circle</span>
                           {item}
@@ -209,12 +209,12 @@ export default async function HomePage({
           <SlideIn direction="left" className="lg:w-1/2 space-y-10">
             <FadeIn delay={0.1}>
               <div className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full font-label text-sm font-semibold">
-                Caso de Éxito: LogisticCorp
+                {t('home.caseLabel')}
               </div>
             </FadeIn>
             <FadeUp delay={0.15}>
               <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight text-on-surface font-headline">
-                <AnimatedCounter to={84} suffix="%" className="text-ochre" /> de reducción en latencia operacional.
+                <AnimatedCounter to={84} suffix="%" className="text-ochre" /> {t('home.caseMetric')}
               </h2>
             </FadeUp>
             <FadeUp delay={0.2}>
@@ -225,16 +225,16 @@ export default async function HomePage({
             <Stagger className="grid grid-cols-2 gap-8">
               <StaggerItem>
                 <div className="text-4xl font-black text-ochre font-headline">1.2M</div>
-                <div className="text-xs text-on-surface-variant/60 font-label uppercase tracking-widest mt-1">Costos Ahorrados</div>
+                <div className="text-xs text-on-surface-variant/60 font-label uppercase tracking-widest mt-1">{t('home.caseStat1')}</div>
               </StaggerItem>
               <StaggerItem>
                 <div className="text-4xl font-black text-ochre font-headline">0.02s</div>
-                <div className="text-xs text-on-surface-variant/60 font-label uppercase tracking-widest mt-1">Tiempo de Respuesta</div>
+                <div className="text-xs text-on-surface-variant/60 font-label uppercase tracking-widest mt-1">{t('home.caseStat2')}</div>
               </StaggerItem>
             </Stagger>
             <FadeUp delay={0.25}>
               <Link href="/contacto" className="flex items-center gap-2 text-primary font-bold font-headline hover:gap-4 transition-all w-fit cursor-pointer">
-                Solicitar auditoría gratuita
+                {t('home.caseCta')}
                 <span className="material-symbols-outlined">arrow_forward</span>
               </Link>
             </FadeUp>
@@ -286,7 +286,7 @@ export default async function HomePage({
         <div className="max-w-7xl mx-auto text-center">
           <FadeIn>
             <p className="text-xs font-label text-on-surface-variant/60 uppercase tracking-[0.3em] mb-12">
-              Impulsado por Tecnología de Clase Mundial
+              {t('home.techLabel')}
             </p>
             <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-40 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-700 text-primary">
               {['Python', 'OpenAI', 'React', 'Next.js', 'n8n', 'AWS'].map((tech) => (
@@ -316,10 +316,10 @@ export default async function HomePage({
               </p>
               <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
                 <Link href="/contacto" className="bg-white text-primary px-12 py-5 rounded-full text-lg font-bold font-headline hover:bg-ochre hover:text-white transition-colors cursor-pointer">
-                  Solicitar Auditoría Gratuita
+                  {t('home.ctaPrimary')}
                 </Link>
                 <Link href="/contacto" className="text-on-primary px-8 py-5 font-semibold font-headline flex items-center gap-2 hover:bg-white/10 rounded-full transition-colors cursor-pointer">
-                  Hablar con un consultor
+                  {t('home.ctaSecondary')}
                   <span className="material-symbols-outlined">call</span>
                 </Link>
               </div>

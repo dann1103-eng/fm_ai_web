@@ -98,6 +98,27 @@
       }
     ]
   },
+  "home": {
+    "tagline": "Inteligencia Táctil",
+    "heroTitle": "El Futuro de la IA,",
+    "heroCon": "con",
+    "heroTitleHighlight": "Sofisticación Orgánica.",
+    "heroSubtitleExtra": "Tecnología de vanguardia con un toque artesanal, diseñada para hacer crecer tu negocio.",
+    "heroCta": "Explorar Soluciones",
+    "aiActive": "IA Activa",
+    "capabilities": "Nuestras Capacidades",
+    "bentoExtra1": "Eliminamos la fricción operativa mediante agentes autónomos.",
+    "bentoExtra2": "Asistentes que comprenden el contexto emocional y técnico.",
+    "bentoFeatures": ["NLP Multilingüe", "Integración CRM Total", "Disponible 24/7"],
+    "caseLabel": "Caso de Éxito: LogisticCorp",
+    "caseMetric": "de reducción en latencia operacional.",
+    "caseStat1": "Costos Ahorrados",
+    "caseStat2": "Tiempo de Respuesta",
+    "caseCta": "Solicitar auditoría gratuita",
+    "techLabel": "Impulsado por Tecnología de Clase Mundial",
+    "ctaPrimary": "Solicitar Auditoría Gratuita",
+    "ctaSecondary": "Hablar con un consultor"
+  },
   "cta": {
     "title": "¿Listo para transformar tu negocio?",
     "subtitle": "Agenda una llamada gratuita y descubre cómo la IA puede ayudarte",
