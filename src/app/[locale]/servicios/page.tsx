@@ -1,5 +1,15 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
+import {
+  FadeUp,
+  FadeIn,
+  SlideIn,
+  Stagger,
+  StaggerItem,
+  ScaleOnHover,
+  HeroReveal,
+  HeroRevealItem,
+} from '@/components/ui/motion';
 
 /* ─────────────────────────────────────────
    Reusable: feature checklist item
@@ -66,29 +76,39 @@ export default function ServiciosPage() {
       {/* ── HERO ── */}
       <section className="relative min-h-[560px] flex items-center justify-center overflow-hidden bg-surface bg-pattern px-6 py-20 pt-36">
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest mb-6 font-label">
-            FM AI SOLUTIONS
-          </span>
-          <h1 className="text-5xl md:text-7xl font-extrabold text-primary mb-8 tracking-tight leading-[1.1] font-headline">
-            {t('pageTitle')}
-          </h1>
-          <p className="text-xl md:text-2xl text-on-surface-variant font-medium leading-relaxed max-w-2xl mx-auto font-body">
-            {t('pageSubtitle')}
-          </p>
-          <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contacto"
-              className="primary-gradient text-white px-10 py-4 rounded-full font-bold text-lg hover:shadow-xl transition-all active:scale-95 font-headline cursor-pointer"
-            >
-              Explorar Soluciones
-            </Link>
-            <Link
-              href="/contacto"
-              className="bg-surface-container-high text-primary px-10 py-4 rounded-full font-bold text-lg hover:bg-surface-container-highest transition-all active:scale-95 font-headline cursor-pointer"
-            >
-              Ver Casos de Éxito
-            </Link>
-          </div>
+          <HeroReveal>
+            <HeroRevealItem>
+              <span className="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest mb-6 font-label">
+                FM AI SOLUTIONS
+              </span>
+            </HeroRevealItem>
+            <HeroRevealItem>
+              <h1 className="text-5xl md:text-7xl font-extrabold text-primary mb-8 tracking-tight leading-[1.1] font-headline">
+                {t('pageTitle')}
+              </h1>
+            </HeroRevealItem>
+            <HeroRevealItem>
+              <p className="text-xl md:text-2xl text-on-surface-variant font-medium leading-relaxed max-w-2xl mx-auto font-body">
+                {t('pageSubtitle')}
+              </p>
+            </HeroRevealItem>
+            <HeroRevealItem>
+              <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/contacto"
+                  className="primary-gradient text-white px-10 py-4 rounded-full font-bold text-lg hover:shadow-xl transition-all active:scale-95 font-headline cursor-pointer"
+                >
+                  Explorar Soluciones
+                </Link>
+                <Link
+                  href="/contacto"
+                  className="bg-surface-container-high text-primary px-10 py-4 rounded-full font-bold text-lg hover:bg-surface-container-highest transition-all active:scale-95 font-headline cursor-pointer"
+                >
+                  Ver Casos de Éxito
+                </Link>
+              </div>
+            </HeroRevealItem>
+          </HeroReveal>
         </div>
       </section>
 
@@ -96,7 +116,7 @@ export default function ServiciosPage() {
       <section className="py-24 px-6 md:px-12 bg-surface">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Text — left */}
-          <div className="order-2 lg:order-1">
+          <SlideIn direction="left" className="order-2 lg:order-1">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
                 <span className="material-symbols-outlined text-primary text-3xl">smart_toy</span>
@@ -111,22 +131,26 @@ export default function ServiciosPage() {
             <p className="text-lg text-on-surface-variant mb-8 leading-relaxed font-body">
               {t('saveTime.description')}
             </p>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            <Stagger className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
               {(t.raw('saveTime.features') as string[]).map((f) => (
-                <Feature key={f} icon="check_circle" label={f} bg="bg-surface-container-low" />
+                <StaggerItem key={f}>
+                  <Feature icon="check_circle" label={f} bg="bg-surface-container-low" />
+                </StaggerItem>
               ))}
-            </ul>
-            <Link
-              href="/contacto?servicio=automatizacion"
-              className="primary-gradient text-white px-8 py-4 rounded-full font-bold inline-block active:scale-95 shadow-lg shadow-primary/20 font-headline transition-all hover:shadow-xl cursor-pointer"
-            >
-              {t('saveTime.cta')}
-            </Link>
-          </div>
+            </Stagger>
+            <FadeUp delay={0.3}>
+              <Link
+                href="/contacto?servicio=automatizacion"
+                className="primary-gradient text-white px-8 py-4 rounded-full font-bold inline-block active:scale-95 shadow-lg shadow-primary/20 font-headline transition-all hover:shadow-xl cursor-pointer"
+              >
+                {t('saveTime.cta')}
+              </Link>
+            </FadeUp>
+          </SlideIn>
           {/* Visual — right */}
-          <div className="order-1 lg:order-2">
+          <SlideIn direction="right" className="order-1 lg:order-2">
             <ServiceVisual icon="account_tree" accent="bg-primary/10" />
-          </div>
+          </SlideIn>
         </div>
       </section>
 
@@ -134,11 +158,11 @@ export default function ServiciosPage() {
       <section className="py-24 px-6 md:px-12 bg-surface-container-low">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Visual — left */}
-          <div className="order-1">
+          <SlideIn direction="left" className="order-1">
             <ServiceVisual icon="forum" accent="bg-secondary-container/50" iconColor="text-secondary" />
-          </div>
+          </SlideIn>
           {/* Text — right */}
-          <div className="order-2">
+          <SlideIn direction="right" className="order-2">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-2xl bg-secondary-container/60 flex items-center justify-center">
                 <span className="material-symbols-outlined text-secondary text-3xl">trending_up</span>
@@ -153,18 +177,22 @@ export default function ServiciosPage() {
             <p className="text-lg text-on-surface-variant mb-8 leading-relaxed font-body">
               {t('sellMore.description')}
             </p>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            <Stagger className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
               {(t.raw('sellMore.features') as string[]).map((f) => (
-                <Feature key={f} icon="rocket_launch" label={f} bg="bg-surface-container" />
+                <StaggerItem key={f}>
+                  <Feature icon="rocket_launch" label={f} bg="bg-surface-container" />
+                </StaggerItem>
               ))}
-            </ul>
-            <Link
-              href="/contacto?servicio=chatbot"
-              className="primary-gradient text-white px-8 py-4 rounded-full font-bold inline-block active:scale-95 shadow-lg shadow-primary/20 font-headline transition-all hover:shadow-xl cursor-pointer"
-            >
-              {t('sellMore.cta')}
-            </Link>
-          </div>
+            </Stagger>
+            <FadeUp delay={0.3}>
+              <Link
+                href="/contacto?servicio=chatbot"
+                className="primary-gradient text-white px-8 py-4 rounded-full font-bold inline-block active:scale-95 shadow-lg shadow-primary/20 font-headline transition-all hover:shadow-xl cursor-pointer"
+              >
+                {t('sellMore.cta')}
+              </Link>
+            </FadeUp>
+          </SlideIn>
         </div>
       </section>
 
@@ -172,7 +200,7 @@ export default function ServiciosPage() {
       <section className="py-24 px-6 md:px-12 bg-surface">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Text — left */}
-          <div className="order-2 lg:order-1">
+          <SlideIn direction="left" className="order-2 lg:order-1">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
                 <span className="material-symbols-outlined text-primary text-3xl">altitude</span>
@@ -187,22 +215,26 @@ export default function ServiciosPage() {
             <p className="text-lg text-on-surface-variant mb-8 leading-relaxed font-body">
               {t('scale.description')}
             </p>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            <Stagger className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
               {(t.raw('scale.features') as string[]).map((f) => (
-                <Feature key={f} icon="hub" label={f} bg="bg-surface-container-low" />
+                <StaggerItem key={f}>
+                  <Feature icon="hub" label={f} bg="bg-surface-container-low" />
+                </StaggerItem>
               ))}
-            </ul>
-            <Link
-              href="/contacto?servicio=escala"
-              className="primary-gradient text-white px-8 py-4 rounded-full font-bold inline-block active:scale-95 shadow-lg shadow-primary/20 font-headline transition-all hover:shadow-xl cursor-pointer"
-            >
-              {t('scale.cta')}
-            </Link>
-          </div>
+            </Stagger>
+            <FadeUp delay={0.3}>
+              <Link
+                href="/contacto?servicio=escala"
+                className="primary-gradient text-white px-8 py-4 rounded-full font-bold inline-block active:scale-95 shadow-lg shadow-primary/20 font-headline transition-all hover:shadow-xl cursor-pointer"
+              >
+                {t('scale.cta')}
+              </Link>
+            </FadeUp>
+          </SlideIn>
           {/* Visual — right */}
-          <div className="order-1 lg:order-2">
+          <SlideIn direction="right" className="order-1 lg:order-2">
             <ServiceVisual icon="bar_chart" accent="bg-primary/10" />
-          </div>
+          </SlideIn>
         </div>
       </section>
 
@@ -210,11 +242,11 @@ export default function ServiciosPage() {
       <section className="py-24 px-6 md:px-12 bg-surface-container-low">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Visual — left */}
-          <div className="order-1">
+          <SlideIn direction="left" className="order-1">
             <ServiceVisual icon="psychology" accent="bg-secondary-container/50" iconColor="text-secondary" />
-          </div>
+          </SlideIn>
           {/* Text — right */}
-          <div className="order-2">
+          <SlideIn direction="right" className="order-2">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-2xl bg-secondary-container/60 flex items-center justify-center">
                 <span className="material-symbols-outlined text-secondary text-3xl">psychology</span>
@@ -229,39 +261,45 @@ export default function ServiciosPage() {
             <p className="text-lg text-on-surface-variant mb-8 leading-relaxed font-body">
               {t('innovate.description')}
             </p>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            <Stagger className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
               {(t.raw('innovate.features') as string[]).map((f) => (
-                <Feature key={f} icon="lightbulb" label={f} bg="bg-surface-container" />
+                <StaggerItem key={f}>
+                  <Feature icon="lightbulb" label={f} bg="bg-surface-container" />
+                </StaggerItem>
               ))}
-            </ul>
-            <Link
-              href="/contacto?servicio=consultoria"
-              className="primary-gradient text-white px-8 py-4 rounded-full font-bold inline-block active:scale-95 shadow-lg shadow-primary/20 font-headline transition-all hover:shadow-xl cursor-pointer"
-            >
-              {t('innovate.cta')}
-            </Link>
-          </div>
+            </Stagger>
+            <FadeUp delay={0.3}>
+              <Link
+                href="/contacto?servicio=consultoria"
+                className="primary-gradient text-white px-8 py-4 rounded-full font-bold inline-block active:scale-95 shadow-lg shadow-primary/20 font-headline transition-all hover:shadow-xl cursor-pointer"
+              >
+                {t('innovate.cta')}
+              </Link>
+            </FadeUp>
+          </SlideIn>
         </div>
       </section>
 
       {/* ── FINAL CTA ── */}
       <section className="py-24 px-6 md:px-12">
-        <div className="max-w-5xl mx-auto bg-primary rounded-[2.5rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-ochre/20 rounded-full blur-[100px] -mr-32 -mt-32 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-[100px] -ml-32 -mb-32 pointer-events-none" />
-          <h3 className="text-3xl md:text-5xl font-extrabold text-on-primary mb-6 relative z-10 leading-tight font-headline">
-            {t('ctaSection.title')}
-          </h3>
-          <p className="text-xl md:text-2xl text-on-primary/80 mb-12 relative z-10 max-w-2xl mx-auto font-body">
-            {t('ctaSection.subtitle')}
-          </p>
-          <Link
-            href="/contacto"
-            className="inline-block bg-white text-primary px-12 py-5 rounded-full font-bold text-xl relative z-10 hover:bg-ochre hover:text-white transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-black/20 font-headline cursor-pointer"
-          >
-            {t('ctaSection.cta')}
-          </Link>
-        </div>
+        <FadeUp>
+          <div className="max-w-5xl mx-auto bg-primary rounded-[2.5rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-ochre/20 rounded-full blur-[100px] -mr-32 -mt-32 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-[100px] -ml-32 -mb-32 pointer-events-none" />
+            <h3 className="text-3xl md:text-5xl font-extrabold text-on-primary mb-6 relative z-10 leading-tight font-headline">
+              {t('ctaSection.title')}
+            </h3>
+            <p className="text-xl md:text-2xl text-on-primary/80 mb-12 relative z-10 max-w-2xl mx-auto font-body">
+              {t('ctaSection.subtitle')}
+            </p>
+            <Link
+              href="/contacto"
+              className="inline-block bg-white text-primary px-12 py-5 rounded-full font-bold text-xl relative z-10 hover:bg-ochre hover:text-white transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-black/20 font-headline cursor-pointer"
+            >
+              {t('ctaSection.cta')}
+            </Link>
+          </div>
+        </FadeUp>
       </section>
     </>
   );

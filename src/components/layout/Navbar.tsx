@@ -1,17 +1,25 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
+import { motion } from 'framer-motion';
 
 export default function Navbar() {
   const t = useTranslations('nav');
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const toggleLocale = () => {
     const next = locale === 'es' ? 'en' : 'es';
@@ -26,7 +34,14 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-3xl border-b border-outline-variant/20 shadow-sm">
+    <motion.header
+      className={`fixed top-0 w-full z-50 backdrop-blur-3xl border-b border-outline-variant/20 transition-colors duration-300 ${
+        scrolled ? 'bg-white/90 shadow-md shadow-primary/5' : 'bg-white/70'
+      }`}
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+    >
       <nav className="flex justify-between items-center max-w-7xl mx-auto px-8 md:px-12 py-5">
 
         {/* Logo */}
@@ -106,6 +121,6 @@ export default function Navbar() {
           </div>
         </div>
       )}
-    </header>
+    </motion.header>
   );
 }

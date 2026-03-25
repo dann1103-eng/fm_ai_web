@@ -6,6 +6,7 @@ import { routing } from '@/i18n/routing';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ChatBubble from '@/components/chatbot/ChatBubble';
+import PageTransition from '@/components/ui/PageTransition';
 import '../globals.css';
 
 const manrope = Manrope({
@@ -52,7 +53,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <main className="flex-1">
-            {children}
+            <PageTransition>{children}</PageTransition>
           </main>
           <Footer />
           <ChatBubble />
