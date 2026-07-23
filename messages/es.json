@@ -8,6 +8,7 @@
     "services": "Servicios",
     "about": "Sobre Nosotros",
     "contact": "Contacto",
+    "support": "Soporte",
     "cta": "Agenda una llamada"
   },
   "hero": {
@@ -193,7 +194,7 @@
     "error": "Hubo un error. Intenta de nuevo.",
     "calendly": "O agenda directamente una llamada",
     "info": {
-      "email": "contacto@fmai.com",
+      "email": "contacto@fmcomsolutions.com",
       "phone": "+XX XXX XXX XXXX",
       "location": "Latinoamérica (remoto)"
     }

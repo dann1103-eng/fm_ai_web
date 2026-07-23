@@ -174,11 +174,11 @@ export default async function PrivacidadPage({
             <h2 className="text-3xl font-bold mb-4 font-headline">{c.cta.title}</h2>
             <p className="opacity-90 mb-8 max-w-md font-body">{c.cta.subtitle}</p>
             <a
-              href="mailto:privacy@fmai.com"
+              href="mailto:legal@fmcomsolutions.com"
               className="bg-white text-primary px-10 py-4 rounded-full font-bold text-lg hover:bg-ochre hover:text-white transition-all hover:scale-105 inline-flex items-center gap-3 font-headline shadow-lg"
             >
               <span className="material-symbols-outlined text-lg">mail</span>
-              privacy@fmai.com
+              legal@fmcomsolutions.com
             </a>
           </section>
 

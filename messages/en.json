@@ -8,6 +8,7 @@
     "services": "Services",
     "about": "About Us",
     "contact": "Contact",
+    "support": "Support",
     "cta": "Book a call"
   },
   "hero": {
@@ -193,7 +194,7 @@
     "error": "There was an error. Please try again.",
     "calendly": "Or book a call directly",
     "info": {
-      "email": "contact@fmai.com",
+      "email": "contacto@fmcomsolutions.com",
       "phone": "+XX XXX XXX XXXX",
       "location": "Latin America (remote)"
     }

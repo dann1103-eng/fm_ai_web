@@ -28,6 +28,7 @@ export default function Footer() {
             { href: '/servicios',      label: t('nav.services') },
             { href: '/sobre-nosotros', label: t('nav.about') },
             { href: '/contacto',       label: t('nav.contact') },
+            { href: '/soporte',        label: t('nav.support') },
           ].map((link) => (
             <Link
               key={link.href}
