@@ -187,10 +187,10 @@ export default async function TerminosPage({
               <h2 className="text-3xl font-extrabold text-primary mb-4 font-headline">{c.s11.title}</h2>
               <p className="text-on-surface-variant mb-8 font-body">{c.s11.subtitle}</p>
               <a
-                href="mailto:legal@fmcomsolutions.com"
+                href="mailto:soporte@fmcomsolutions.com"
                 className="inline-flex items-center gap-2 text-xl font-bold text-primary hover:text-ochre hover:underline underline-offset-8 transition-all font-headline"
               >
-                legal@fmcomsolutions.com
+                soporte@fmcomsolutions.com
                 <span className="material-symbols-outlined text-xl">alternate_email</span>
               </a>
             </div>
